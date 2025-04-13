@@ -1,0 +1,19 @@
+#This is used to specify metadata and dependencies.
+[Unit]
+Description=Gunicorn daemon for PHORA API
+Requires=
+After=network.target
+
+#It specifies the user and group that you want the process to run under, also giving group ownership to the www-data group so that Nginx can communicate with Gunicorn. 
+[Service]
+User=
+Group=www-data
+WorkingDirectory=/home/username/phora_BE
+ExecStart=/home/yourusername/venv/bin/gunicorn \
+--access-logfile - --workers 3 \
+--bind unix:/home/yourusername/phora_BE/phora_API.sock \
+phora_API.wsgi:application
+
+#This will tell systemd what to link this service to if you enable it to start at boot.
+[Install]
+WantedBy=multi-user.target
