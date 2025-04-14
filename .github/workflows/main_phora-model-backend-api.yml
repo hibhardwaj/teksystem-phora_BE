@@ -6,7 +6,7 @@ on:
       - main  # or 'master' or any branch you prefer
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -50,4 +50,31 @@ jobs:
           path: |
             release.zip
             !venv/
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    permissions:
+      id-token: write #This is required for requesting the JWT
+      contents: read #This is required for actions/checkout
+
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: python-app
+
+      - name: Unzip artifact for deployment
+        run: unzip release.zip
+
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_C6A71136DDCF415FA965C045A9F81550 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_AAE3B45207A141FFBCE82349FD33CFC2 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_F07DF7E3C13140199621CC285F416988 }}
+
 
