@@ -25,7 +25,6 @@ jobs:
 
     - name: Django migrations & collectstatic
       run: |
-        source venv/bin/activate
         python manage.py migrate --noinput
         python manage.py collectstatic --noinput
       env:
