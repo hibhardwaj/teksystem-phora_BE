@@ -76,5 +76,11 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_C6A71136DDCF415FA965C045A9F81550 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_AAE3B45207A141FFBCE82349FD33CFC2 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_F07DF7E3C13140199621CC285F416988 }}
+      # - name: Deploy to Azure Web App
+      #   uses: azure/webapps-deploy@v2
+      #   with:
+      #     app-name: 'phora-model-backend-api'  # your Azure Web App name
+      #     publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+      #     package: .
 
 
