@@ -85,6 +85,10 @@ jobs:
           app-name: 'phora-model-backend-api'
           slot-name: 'Production'
           package: .
+      
+      - name: Show files being deployed
+        run: ls -R
+
 
 
 
