@@ -84,6 +84,7 @@ jobs:
         with:
           app-name: 'phora-model-backend-api'
           slot-name: 'Production'
+          package: './backend'
 
 
 
