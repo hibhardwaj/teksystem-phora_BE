@@ -30,7 +30,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 # CORS_ALLOW_ALL_ORIGINS:config('CORS_ORIGINS')
 # ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net']
-CORS_ALLOW_ALL_ORIGINS: config('CORS_ORIGINS')
+CORS_ALLOW_ALL_ORIGINS: True
 
 # Application definition
 
