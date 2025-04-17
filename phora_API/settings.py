@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-CSRF_TRUSTED_ORIGINS=['https://'+config('CSRF_TRUSTED_ORIGINS')]
+#CSRF_TRUSTED_ORIGINS=['https://'+config('CSRF_TRUSTED_ORIGINS')]
 CORS_ALLOW_ALL_ORIGINS:config('CORS_ALLOW_ALL_ORIGINS')
 # ALLOWED_HOSTS = ['*']
 # CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net']
