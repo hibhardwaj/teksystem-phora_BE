@@ -13,3 +13,7 @@ PHORA API Documentation
   git pull origin main
   git commit -m "azure deployment files"
   git push origin main  
+
+
+Login Configuration
+ 
