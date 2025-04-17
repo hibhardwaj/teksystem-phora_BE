@@ -26,11 +26,11 @@ SECRET_KEY = 'django-insecure-*_1d4=wk3*j(_o00dg$7)33$psem@7^7l&umaw%sqt9d9hvnv%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-# CSRF_TRUSTED_ORIGINS=['https://'+config('ALLOWED_HOSTS')]
-ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net']
-CORS_ALLOW_ALL_ORIGINS: True
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+CSRF_TRUSTED_ORIGINS=['https://'+config('ALLOWED_HOSTS')]
+# ALLOWED_HOSTS = ['*']
+# CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net']
+CORS_ALLOW_ALL_ORIGINS: config('CORS_ALLOW_ALL_ORIGINS')
 # Application definition
 
 INSTALLED_APPS = [
