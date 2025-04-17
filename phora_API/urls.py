@@ -29,8 +29,7 @@ schema_view = get_schema_view(
       description="API documentation",
    ),
    public=True,
-   permission_classes=(permissions.AllowAny,),
-   url=settings.CSRF_TRUSTED_ORIGINS,
+   permission_classes=(permissions.AllowAny,)
 )
 
 urlpatterns = [
