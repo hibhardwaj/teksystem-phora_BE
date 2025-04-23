@@ -31,6 +31,6 @@ steps:
     python manage.py collectstatic --noinput
   displayName: 'Django migrations & collectstatic'
   env:
-    SECRET_KEY: 'django-insecure-*_1d4=wk3*j(_o00dg$7)33$psem@7^7l&umaw%sqt9d9hvnv%'  # Use same name as expected by decouple
+    SECRET_KEY: $(SECRET_KEY)  # Use same name as expected by decouple
     DEBUG: False
-    ALLOWED_HOSTS: '*'
+    ALLOWED_HOSTS: $(ALLOWED_HOSTS)
