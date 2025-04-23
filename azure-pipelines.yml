@@ -26,5 +26,9 @@ steps:
     python manage.py migrate --noinput
     python manage.py collectstatic --noinput
   displayName: 'Django migrations & collectstatic'
+  env:
+    SECRET_KEY: $(SECRET_KEY)  # Use same name as expected by decouple
+    DEBUG: 'False'
+    ALLOWED_HOSTS: $(ALLOWED_HOSTS)
 
 
