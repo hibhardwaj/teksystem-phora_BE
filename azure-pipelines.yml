@@ -28,7 +28,7 @@ steps:
   displayName: 'Django migrations & collectstatic'
   env:
     SECRET_KEY: $(SECRET_KEY)  # Use same name as expected by decouple
-    DEBUG: 'False'
+    DEBUG: $(DEBUG)
     ALLOWED_HOSTS: $(ALLOWED_HOSTS)
 
 
