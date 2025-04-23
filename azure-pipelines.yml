@@ -16,4 +16,12 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    python -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+  displayName: 'Set up virtual environment and install dependencies'
+
+- script: |
+    python manage.py migrate --noinput
+    python manage.py collectstatic --noinput
+  displayName: 'Django migrations & collectstatic'
