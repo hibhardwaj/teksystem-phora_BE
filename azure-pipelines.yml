@@ -20,4 +20,10 @@ steps:
     source venv/bin/activate
     pip install -r requirements.txt
   displayName: 'Set up virtual environment and install dependencies'
+  
+- script: |
+    python manage.py migrate --noinput
+    python manage.py collectstatic --noinput
+  displayName: 'Django migrations & collectstatic'
+
 
