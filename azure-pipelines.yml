@@ -20,7 +20,10 @@ steps:
     source venv/bin/activate
     pip install -r requirements.txt
   displayName: 'Set up virtual environment and install dependencies'
-  
+
+- script: env | grep SECRET
+  displayName: 'Check if SECRET_KEY is available'
+
 - script: |
     source venv/bin/activate
     python manage.py migrate --noinput
