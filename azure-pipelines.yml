@@ -25,6 +25,7 @@ steps:
   displayName: 'Check if SECRET_KEY is available'
 
 - script: |
+    echo $(SECRET_KEY)
     source venv/bin/activate
     python manage.py migrate --noinput
     python manage.py collectstatic --noinput
