@@ -25,10 +25,10 @@ steps:
   displayName: 'Set up virtual environment and install dependencies'
 
 - script: |
+    source venv/bin/activate
     if [ -z "$SECRET_KEY" ]; then echo "SECRET_KEY is missing 😬"; else echo "SECRET_KEY is set ✅"; fi
-    # source venv/bin/activate
-    # python manage.py migrate --noinput
-    # python manage.py collectstatic --noinput
+    python manage.py migrate --noinput
+    python manage.py collectstatic --noinput
   displayName: 'Django migrations & collectstatic'
   env:
     SECRET_KEY: $(SECRET_KEY)  # Use same name as expected by decouple
