@@ -10,7 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  group: phoramodel
+  #group: phoramodel
+  - name: SECRET_KEY
+    value: 'gzsudgfud'
+  - name: ALLOWED_HOSTS
+    value: '*'
     
 steps:
 - script: echo Hello, world!
