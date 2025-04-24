@@ -10,8 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-    SECRET_KEY: $(SECRET_KEY)
-    ALLOWED_HOSTS: $(ALLOWED_HOSTS)
+  SECRET_KEY: $(SECRET_KEY)
+  ALLOWED_HOSTS: $(ALLOWED_HOSTS)
     
 steps:
 - script: echo Hello, world!
