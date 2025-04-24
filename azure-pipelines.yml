@@ -10,7 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  #group: phoramodel
   - name: SECRET_KEY
     value: 'gzsudgfud'
   - name: ALLOWED_HOSTS
