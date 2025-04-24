@@ -10,8 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  SECRET_KEY: 'django-insecure-*_1d4=wk3*j(_o00dg$7)33$psem@7^7l&umaw%sqt9d9hvnv%'
-  ALLOWED_HOSTS: '*'
+  group: phoramodel
     
 steps:
 - script: echo Hello, world!
