@@ -25,14 +25,12 @@ steps:
     pip install -r requirements.txt
   displayName: 'Set up virtual environment and install dependencies'
 
-- script: env | grep SECRET
-  displayName: 'Check if SECRET_KEY is available'
-
 - script: |
     echo "Secret Key is: $SECRET_KEY"
-    source venv/bin/activate
-    python manage.py migrate --noinput
-    python manage.py collectstatic --noinput
+    echo "Secret Key1 is: {{SECRET_KEY}}"
+    # source venv/bin/activate
+    # python manage.py migrate --noinput
+    # python manage.py collectstatic --noinput
   displayName: 'Django migrations & collectstatic'
   env:
     SECRET_KEY: $(SECRET_KEY)  # Use same name as expected by decouple
