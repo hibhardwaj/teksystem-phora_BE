@@ -52,5 +52,5 @@ steps:
     appType: 'webAppLinux'
     appName: 'phora-model-backend-api'
     package: '$(Build.ArtifactStagingDirectory)/app.zip'
-    runtimeStack: 'NODE|3.11'  # or your actual runtime
+    runtimeStack: 'PYTHON|3.11'  # or your actual runtime
   displayName: 'Deploy to Azure Web App'
