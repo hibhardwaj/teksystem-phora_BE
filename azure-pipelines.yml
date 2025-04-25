@@ -9,11 +9,11 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  - name: SECRET_KEY
-    value: 'gzsudgfud'
-  - name: ALLOWED_HOSTS
-    value: '*'
+# variables:
+#   - name: SECRET_KEY
+#     value: 'gzsudgfud'
+#   - name: ALLOWED_HOSTS
+#     value: '*'
     
 steps:
 - script: echo Hello, world!
