@@ -90,6 +90,14 @@ stages:
         python manage.py collectstatic --noinput
       displayName: 'Migrate DB & Collect Static Files'
 
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/app.zip'
+        replaceExistingArchive: true
+      displayName: 'Archive project files for deployment'
     - task: AzureWebApp@1
       inputs:
         azureSubscription: 'phora-api-service-connection'
@@ -98,3 +106,4 @@ stages:
         package: '$(Pipeline.Workspace)/appPackage/app.zip'
         runtimeStack: 'PYTHON|3.11'
       displayName: 'Deploy to Azure Web App'
+    
