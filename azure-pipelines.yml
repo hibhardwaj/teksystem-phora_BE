@@ -10,10 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  - name: SECRET_KEY
-    value: 'gzsudgfud'
-  - name: ALLOWED_HOSTS
-    value: '*'
+  group: 'phoramodel'
+  # - name: SECRET_KEY
+  #   value: 'gzsudgfud'
+  # - name: ALLOWED_HOSTS
+  #   value: '*'
     
 steps:
 - script: echo Hello, world!
@@ -29,9 +30,9 @@ steps:
 
 - script: |
     source venv/bin/activate
-    # export SECRET_KEY=$(SECRET_KEY)
-    # export DEBUG=False
-    # export ALLOWED_HOSTS=$(ALLOWED_HOSTS)
+    export SECRET_KEY=$(SECRET_KEY)
+    export DEBUG=False
+    export ALLOWED_HOSTS=$(ALLOWED_HOSTS)
     if [ -z "$SECRET_KEY" ]; then echo "SECRET_KEY is missing 😬"; else echo "SECRET_KEY is set ✅"; fi
     python manage.py migrate --noinput
     python manage.py collectstatic --noinput
