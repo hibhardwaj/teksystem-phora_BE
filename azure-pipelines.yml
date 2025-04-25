@@ -52,6 +52,6 @@ steps:
     appType: 'webAppLinux'
     appName: 'phora-model-backend-api'
     package: '$(Build.ArtifactStagingDirectory)/app.zip'
-    startupCommand: 'gunicorn phoramodel.wsgi:application --bind=0.0.0.0 --timeout 600'   # Add this if needed
+    startupCommand: ''   # Add this if needed
     runtimeStack: 'NODE|3.10'  # or your actual runtime
   displayName: 'Deploy to Azure Web App'
