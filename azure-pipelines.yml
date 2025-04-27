@@ -104,6 +104,6 @@ stages:
         appType: 'webAppLinux'
         appName: 'phora-model-backend-api'
         package: '$(Pipeline.Workspace)/appPackage/app.zip'
-        runtimeStack: 'PYTHON|3.11'
+        runtimeStack: 'PYTHON|3.13'
       displayName: 'Deploy to Azure Web App'
     
